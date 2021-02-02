@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -64,7 +65,7 @@ DATABASES = {
     'default': env.db()
 }
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'users.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
