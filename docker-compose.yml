@@ -16,7 +16,7 @@ services:
       - -c
       - |
         python manage.py migrate
-        python -m django_createsuperuser "admin" "admin" admin@example.com
+        echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin@example.com', 'pass')" | python manage.py shell
         python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./app:/code
