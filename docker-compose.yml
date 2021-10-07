@@ -12,6 +12,8 @@ services:
     build: ./app
     container_name: python-api-backend-app
     environment:
+      - DEBUG=True
+      - ALLOWED_HOSTS=*
       - DJANGO_SETTINGS_MODULE=app.settings
       - DJANGO_SUPERUSER_PASSWORD=password
       - DJANGO_SUPERUSER_USERNAME=admin
